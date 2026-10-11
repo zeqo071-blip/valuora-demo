@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>Qiymət ucuzdur, yoxsa bahalı?</h1>
+  <p>Məhsul linkini yapışdır, qiyməti bazar müşahidələri ilə müqayisə edək.</p>
+  <a class="btn big" href="{{ '/dashboard' if user else '/register' }}">İndi yoxla</a>
+</section>
+{% endblock %}

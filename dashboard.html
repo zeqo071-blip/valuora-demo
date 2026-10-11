@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Panel · Valuora AZ{% endblock %}
+{% block content %}
+<form id="analyze-form" class="card row">
+  <input type="url" name="url" placeholder="https://magaza.az/mehsul" required>
+  <button class="btn" type="submit">Analiz et</button>
+</form>
+<p id="msg" class="error" hidden></p>
+
+<h2>Tarixçə</h2>
+<div id="history" class="grid">
+  {% for it in items %}
+  <article class="card item">
+    {% if it.image %}<img src="{{ it.image }}" alt="" referrerpolicy="no-referrer">{% endif %}
+    <h3>{{ it.title }}</h3>
+    <p class="price">{{ '%.2f'|format(it.price) }} AZN</p>
+    <span class="badge {{ it.verdict }}">{{ it.verdict }}</span>
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}
